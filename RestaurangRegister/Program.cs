@@ -1,62 +1,64 @@
 ﻿using System.Collections;
-using System.Reflection.Metadata.Ecma335;
-
 namespace RestaurangRegister
 {
-    // Uppgift 1: Vet inte, antar att min Registerklass bör ingå. 
-
-    // Uppgift 2: Kan ej OOP så vet inte exakt hur ni menar, fall det är meningen att det skall ärvas osv.
-    //     Metoder bör iaf vara Write och ReadLine metoder, samt en metod som räknar.
-
-    //     Medveten om att detta kanske inte är så bra beskrivet (ovan), men jag kommer försöka lära
-    //     mig det i detta program...
-    //     
-    //     *** Blev även varse om att jag inte kan C# (samt nomenklaturen) något alls :( ***
-
-    
     internal class Register 
     {    
         static void Main(string[] args)
         {
             bool loop = true;
+            ArrayList regArray = new ArrayList();
             do
-            {
-                ArrayList regArray = new ArrayList();
-                
-                Console.WriteLine("Välkommen till Restaurangregistret");
+            {           
+                KlassTest.MenyText();
+              /*  Console.WriteLine("Välkommen till Restaurangregistret");
                 Console.WriteLine("----");
                 Console.WriteLine("Registrera ny 1: ");
                 Console.WriteLine("Se registret 2: ");
-                Console.WriteLine("Avsluta 3: ");
+                Console.WriteLine("Avsluta 3: ");*/
 
                 string val = Console.ReadLine();
 
                 if (val == "1")
                 {
-
-                    Console.WriteLine("Skriv in namn: ");
+                 /*   Console.Write("Skriv in namn: ");
                     string firstName = Console.ReadLine();
-                    regArray.Add(firstName);
-                    Console.WriteLine("Skriv in lön: ");
+
+                    Console.Write("Skriv in lön: ");
                     string salary = Console.ReadLine();
-                    regArray.Add(Tuple.Create(firstName, salary));
 
-
+                    string[] kundUppgift = { "Namn. " + firstName + "Lön: " + salary };
+                    regArray.Add(kundUppgift);
+                    Console.WriteLine();
+                    Console.WriteLine("Uppgifterna är tillagda.");
+                    Console.WriteLine();*/
+                    continue;
                 }
 
-                if (val == "2")
+                else if (val == "2")
                 {
-                    foreach (Tuple<string, string> tuple in regArray)
-                    {
-                        Console.WriteLine(tuple.Item1 + ".");
-                    }
-                    Console.ReadLine();
+                    Console.WriteLine();
+                    Console.WriteLine("Personal:");
+                    Console.WriteLine(regArray.Count);
+                    Console.WriteLine();
+                    continue;
+                    /*      foreach (var item in regArray)
+                          {
+                              Console.WriteLine(item);
+                          }
+                          Console.ReadLine();*/
                 }
 
-                if (val == "3")
+                else if (val == "3")
                 {
                     Console.WriteLine("Trevlig dag!");
-                    loop = false; 
+                    loop = false;
+                }
+                else
+                {
+                    Console.WriteLine();
+                    Console.WriteLine("OBS! - Ni måste välja alt. 1, 2 eller 3.");
+                    Console.WriteLine();
+                    continue;
                 }
                 Console.ReadLine();
             } while (loop);
