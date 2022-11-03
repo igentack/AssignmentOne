@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RestaurangRegister
 {
-    internal class KlassTest
+    internal class PersonalRegister
     {
         public static void MenyText()
         {
@@ -18,8 +18,8 @@ namespace RestaurangRegister
             Console.WriteLine("1: Registrera ny");
             Console.WriteLine("2: Se registret");
             Console.WriteLine("3: Avsluta");
-            Console.WriteLine();
             Console.Write("Skriv ert val: ");
+            Console.WriteLine();
         }
 
         public static void PersonalInmatning()
@@ -30,8 +30,6 @@ namespace RestaurangRegister
             Console.Write("Skriv in lön: ");
             string salary = Console.ReadLine();
 
-            string[] kundUppgift = { "Namn. " + firstName + "Lön: " + salary };
-            regArray.Add(kundUppgift);
             Console.WriteLine();
             Console.WriteLine("Uppgifterna är tillagda.");
             Console.WriteLine();
